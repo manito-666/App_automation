@@ -4,8 +4,6 @@ import os,sys
 Path = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(Path)[0]
 sys.path.append(rootPath)
-from common.mylog import log
-from common.Appium_start import appium_start
 
 def check_port(host,port):
 # 检查端口是否被占用
