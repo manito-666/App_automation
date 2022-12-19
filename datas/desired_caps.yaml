@@ -16,8 +16,8 @@
 #focusable : True
 
 platformName: Android
-platformVersion: '6.0.1'
-deviceName: device product:cancro_x86_64 model:oppo_R11 device:x86_64 transport_id:1
+platformVersion: '11'
+deviceName: 336789504X product:SM-G973F model:SM_G973F device:SM-G973F transport_id:1
 appPackage: com.dh.bpc.gp
 appActivity: com.dh.usdk.demo.MainActivity
 automationName: uiautomator2

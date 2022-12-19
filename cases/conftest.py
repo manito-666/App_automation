@@ -1,4 +1,7 @@
-import pytest
+import pytest,os,sys
+Path = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(Path)[0]
+sys.path.append(rootPath)
 from common.read_data import ReadFileData
 
 # 配置app的各种连接信息

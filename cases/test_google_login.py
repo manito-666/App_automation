@@ -1,9 +1,13 @@
 #coding=utf-8
+import os,sys
+import allure
+import pytest
+Path = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(Path)[0]
+sys.path.append(rootPath)
 from common.mylog import log
 from time import sleep
 from common.read_data import ReadFileData
-import allure
-import pytest
 testelement =ReadFileData('login.yaml').get_yaml_data()
 
 class Test_Glogin():

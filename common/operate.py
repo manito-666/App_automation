@@ -1,6 +1,9 @@
 #coding=utf-8
 import allure
-import time
+import time,os,sys
+Path = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(Path)[0]
+sys.path.append(rootPath)
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support import expected_conditions as EC
@@ -30,7 +33,6 @@ class Operates():
         try:
             self.driver.find_element(*locator).click()
         except Exception:
-            self.get_windows_img()
             self.log.error("定位点击元素失败！")
 
     def click_ele_exist(self, locator):

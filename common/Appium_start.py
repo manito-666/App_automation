@@ -1,6 +1,9 @@
-import subprocess
+import subprocess,os,sys
 from time import ctime
 import multiprocessing
+Path = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(Path)[0]
+sys.path.append(rootPath)
 from conf.config import appium_log
 
 def appium_start(host,port):

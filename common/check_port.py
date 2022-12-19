@@ -1,6 +1,9 @@
 # -*- coding:utf-8 -*-
 import socket
-import os
+import os,sys
+Path = os.path.abspath(os.path.dirname(__file__))
+rootPath = os.path.split(Path)[0]
+sys.path.append(rootPath)
 from common.mylog import log
 from common.Appium_start import appium_start
 
@@ -18,7 +21,6 @@ def check_port(host,port):
     else:
         print("port %s already in use! " %port)
         realease_macport(port)
-        appium_start(host, port)
         return False
 
 
@@ -41,26 +43,26 @@ def realease_macport(port):
 
 
 
-# def release_windport(port):
-#     """释放指定的端口"""
-#     cmd_find = 'netstat -aon | findstr {}'.format(port)  # 查找对应端口的pid
-#     print(cmd_find)
-#
-#     # 返回命令执行后的结果
-#     result = os.popen(cmd_find).read()
-#     print(result)
-#
-#     if str(port) and 'LISTENING' in result:
-#         # 获取端口对应的pid进程
-#         i = result.index('LISTENING')
-#         start = i + len('LISTENING') + 7
-#         end = result.index('\n')
-#         pid = result[start:end]
-#         cmd_kill = 'taskkill -f -pid %s' % pid  # 关闭被占用端口的pid
-#         print(cmd_kill)
-#         os.popen(cmd_kill)
-#     else:
-#         print('port %s is available !' % port)
+def release_windport(port):
+    """释放指定的端口"""
+    cmd_find = 'netstat -aon | findstr {}'.format(port)  # 查找对应端口的pid
+    print(cmd_find)
+
+    # 返回命令执行后的结果
+    result = os.popen(cmd_find).read()
+    print(result)
+
+    if str(port) and 'LISTENING' in result:
+        # 获取端口对应的pid进程
+        i = result.index('LISTENING')
+        start = i + len('LISTENING') + 7
+        end = result.index('\n')
+        pid = result[start:end]
+        cmd_kill = 'taskkill -f -pid %s' % pid  # 关闭被占用端口的pid
+        print(cmd_kill)
+        os.popen(cmd_kill)
+    else:
+        print('port %s is available !' % port)
 
 if __name__ == '__main__':
     host = '127.0.0.1'
