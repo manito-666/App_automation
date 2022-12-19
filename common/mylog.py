@@ -30,6 +30,6 @@ class Logger():
         self.logger.addHandler(self.filelogger)
         self.logger.addHandler(self.console)
 
-log = Logger().logger
+log = Logger()
 
 
