@@ -1,11 +1,11 @@
 #coding=utf-8
 import os.path
 import sys
+import logging, time
 Path = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(Path)[0]
 sys.path.append(rootPath)
 from conf.config import *
-import logging, time
 
 BASE_PATH = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
 # 定义日志文件路径
