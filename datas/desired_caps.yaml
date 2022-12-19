@@ -1,0 +1,36 @@
+#计算器配置
+#platformName: Android
+#platformVersion: '10'
+#deviceName: 338886656X product:HLK-AL00 model:HLK_AL00 device:HWHLK-H transport_id:3
+#appPackage: com.youdao.calculator
+#appActivity: com.youdao.calculator.activities.MainActivity
+
+#登录
+#三星手机
+#platformName: Android
+#platformVersion: '11'
+#deviceName: 337903616X product:SM-G973F model:SM_G973F device:SM-G973F transport_id:1
+#appPackage: com.dh.bpc.gp
+#appActivity: com.dh.usdk.demo.MainActivity
+#automationName: uiautomator2
+#focusable : True
+
+platformName: Android
+platformVersion: '6.0.1'
+deviceName: device product:cancro_x86_64 model:oppo_R11 device:x86_64 transport_id:1
+appPackage: com.dh.bpc.gp
+appActivity: com.dh.usdk.demo.MainActivity
+automationName: uiautomator2
+focusable : True
+
+
+
+
+#打卡
+#platformName: Android
+#platformVersion: '10'
+#deviceName: 338886656X product:HLK-AL00 model:HLK_AL00 device:HWHLK-H transport_id:3
+#appPackage: com.ss.android.lark
+#appActivity: com.ss.lark.signinsdk.v2.featurec.login.LoginActivity
+
+
