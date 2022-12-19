@@ -1,7 +1,8 @@
 #coding=utf-8
 import os.path
 import sys
-import logging, time
+import logging
+import time
 Path = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(Path)[0]
 sys.path.append(rootPath)
@@ -33,6 +34,6 @@ class Logger():
         self.logger.addHandler(self.filelogger)
         self.logger.addHandler(self.console)
 
-log = Logger()
+log = Logger().logger
 
 

@@ -1,5 +1,4 @@
 #coding=utf-8
-import allure
 import time,os,sys
 Path = os.path.abspath(os.path.dirname(__file__))
 rootPath = os.path.split(Path)[0]
@@ -137,56 +136,6 @@ class Operates():
         except NameError as e:
             self.get_windows_img()
 
-    # def key_input(self,nuber):
-    #     keycode = {}
-    #     keycode['0'] = '7'
-    #     keycode['1'] = '8'
-    #     keycode['2'] = '9'
-    #     keycode['3'] = '10'
-    #     keycode['4'] = '11'
-    #     keycode['5'] = '12'
-    #     keycode['6'] = '13'
-    #     keycode['7'] = '14'
-    #     keycode['8'] = '15'
-    #     keycode['9'] = '16'
-    #     keycode['a'] = '29'
-    #     keycode['b'] = '30'
-    #     keycode['c'] = '31'
-    #     keycode['d'] = '32'
-    #     keycode['e'] = '33'
-    #     keycode['f'] = '34'
-    #     keycode['g'] = '35'
-    #     keycode['h'] = '36'
-    #     keycode['i'] = '37'
-    #     keycode['j'] = '38'
-    #     keycode['k'] = '39'
-    #     keycode['l'] = '40'
-    #     keycode['m'] = '41'
-    #     keycode['n'] = '42'
-    #     keycode['o'] = '43'
-    #     keycode['p'] = '44'
-    #     keycode['q'] = '45'
-    #     keycode['r'] = '46'
-    #     keycode['s'] = '47'
-    #     keycode['t'] = '48'
-    #     keycode['u'] = '49'
-    #     keycode['v'] = '50'
-    #     keycode['w'] = '51'
-    #     keycode['x'] = '52'
-    #     keycode['y'] = '53'
-    #     keycode['z'] = '54'
-    #     keycode['@'] = '77'
-    #     keycode['#'] = '18'
-    #     keycode['+'] = '81'
-    #     keycode['-'] = '69'
-    #     keycode['*'] = '17'
-    #     keycode['/'] = '76'
-    #     keycode['='] = '70'
-    #     print(self.driver.available_ime_engines)
-    #     m = nuber
-    #     self.driver.activate_ime_engine('com.netease.nemu_vinput.nemu/com.android.inputmethodcommon.SoftKeyboard')  # 激活键盘
-    #     for i in m:
-    #         self.driver.press_keycode(keycode[i])
 
     def quit(self):
         """
@@ -199,57 +148,57 @@ class Operates():
         except Exception:
             self.log.error("退出失败！")
 
-# 向上滑动屏幕
-def swipe_to_up(self):
-    window_size = self.driver.get_window_size()
-    width = window_size.get("width")
-    height = window_size.get("height")
-    self.driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, 500)
+    # 向上滑动屏幕
+    def swipe_to_up(self):
+        window_size = self.driver.get_window_size()
+        width = window_size.get("width")
+        height = window_size.get("height")
+        self.driver.swipe(width / 2, height * 3 / 4, width / 2, height / 4, 500)
 
-# 向下滑动屏幕
-def swipe_to_down(self):
-    window_size = self.driver.get_window_size()
-    width = window_size.get("width")
-    height = window_size.get("height")
-    self.driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, 500)
+    # 向下滑动屏幕
+    def swipe_to_down(self):
+        window_size = self.driver.get_window_size()
+        width = window_size.get("width")
+        height = window_size.get("height")
+        self.driver.swipe(width / 2, height / 4, width / 2, height * 3 / 4, 500)
 
-# 向左滑动屏幕
-def swipe_to_left(self):
-    window_size = self.driver.get_window_size()
-    width = window_size.get("width")
-    height = window_size.get("height")
-    self.driver.swipe(width / 4, height / 2, width * 3 / 4, height / 2, 500)
+    # 向左滑动屏幕
+    def swipe_to_left(self):
+        window_size = self.driver.get_window_size()
+        width = window_size.get("width")
+        height = window_size.get("height")
+        self.driver.swipe(width / 4, height / 2, width * 3 / 4, height / 2, 500)
 
-# 向右滑动屏幕
-def swipe_to_right(self):
-    window_size = self.driver.get_window_size()
-    width = window_size.get("width")
-    height = window_size.get("height")
-    self.driver.swipe(width * 4 / 5, height / 2, width / 5, height / 2, 500)
+    # 向右滑动屏幕
+    def swipe_to_right(self):
+        window_size = self.driver.get_window_size()
+        width = window_size.get("width")
+        height = window_size.get("height")
+        self.driver.swipe(width * 4 / 5, height / 2, width / 5, height / 2, 500)
 
-# 长按元素
-def long_press(self, type, loc):
-    if type == 'id':
-        element = self.driver.find_element_by_id(loc)
-        TouchAction(self.driver).long_press(element).perform()
-    elif type == 'xpath':
-        element = self.driver.find_element_by_xpath(loc)
-        TouchAction(self.driver).long_press(element).perform()
-    elif type == 'class_name':
-        element = self.driver.find_element_by_class_name(loc)
-        TouchAction(self.driver).long_press(element).perform()
-    elif type == 'text':
-        element = self.driver.file_detector_context(loc)
-        TouchAction(self.driver).long_press(element).perform()
+    # 长按元素
+    def long_press(self, type, loc):
+        if type == 'id':
+            element = self.driver.find_element_by_id(loc)
+            TouchAction(self.driver).long_press(element).perform()
+        elif type == 'xpath':
+            element = self.driver.find_element_by_xpath(loc)
+            TouchAction(self.driver).long_press(element).perform()
+        elif type == 'class_name':
+            element = self.driver.find_element_by_class_name(loc)
+            TouchAction(self.driver).long_press(element).perform()
+        elif type == 'text':
+            element = self.driver.file_detector_context(loc)
+            TouchAction(self.driver).long_press(element).perform()
 
 
-# 点击坐标
-def touch_tap(self, x, y, duration=50):
-    width = self.driver.get_window_size()['width']
-    height = self.driver.get_window_size()['height']
-    a = (float(x) / width) * width
-    x1 = int(a)
-    b = (float(y) / height) * height
-    y1 = int(b)
-    self.driver.tap([(x1, y1), (x1, y1)], duration)
+    # 点击坐标
+    def touch_tap(self, x, y, duration=50):
+        width = self.driver.get_window_size()['width']
+        height = self.driver.get_window_size()['height']
+        a = (float(x) / width) * width
+        x1 = int(a)
+        b = (float(y) / height) * height
+        y1 = int(b)
+        self.driver.tap([(x1, y1), (x1, y1)], duration)
 
